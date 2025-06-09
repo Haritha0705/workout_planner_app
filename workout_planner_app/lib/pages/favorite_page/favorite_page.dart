@@ -16,7 +16,11 @@ class _FavoritePageState extends State<FavoritePage> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(HDefaultPadding),
-            child: Column(children: [Text("Favorite Page")]),
+            child: Column(children: [
+              Center(
+              child: 
+              Text("Favorite Page")
+              )]),
           ),
         ),
       ),

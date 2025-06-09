@@ -18,7 +18,9 @@ class _AddNewPageState extends State<AddNewPage> {
             padding: const EdgeInsets.all(HDefaultPadding),
             child: Column(
               children: [
-                Text("Add New Page")
+                Center(
+                  child: 
+                  Text("Add New Page"))
                 ]),
           ),
         ),

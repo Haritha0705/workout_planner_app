@@ -16,7 +16,9 @@ class _HomePageState extends State<HomePage> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(HDefaultPadding),
-            child: Column(children: [Text("Home Page")]),
+            child: Column(children: [
+              Text("Home Page")
+            ]),
           ),
         ),
       ),

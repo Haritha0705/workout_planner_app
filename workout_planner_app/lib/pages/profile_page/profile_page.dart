@@ -16,7 +16,12 @@ class _ProfilePageState extends State<ProfilePage> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(HDefaultPadding),
-            child: Column(children: [Text("Profile Page")]),
+            child: Column(children: [
+              Center(
+                child: 
+                Text("Profile Page")
+                )
+              ]),
           ),
         ),
       ),
