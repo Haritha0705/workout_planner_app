@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_planner_app/const/responsive.dart';
 
 class AddNewPage extends StatefulWidget {
   const AddNewPage({super.key});
@@ -10,6 +11,18 @@ class AddNewPage extends StatefulWidget {
 class _AddNewPageState extends State<AddNewPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(HDefaultPadding),
+            child: Column(
+              children: [
+                Text("Add New Page")
+                ]),
+          ),
+        ),
+      ),
+    );
   }
 }

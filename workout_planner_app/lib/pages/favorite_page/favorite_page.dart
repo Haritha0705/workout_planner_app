@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_planner_app/const/responsive.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({super.key});
@@ -10,6 +11,15 @@ class FavoritePage extends StatefulWidget {
 class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(HDefaultPadding),
+            child: Column(children: [Text("Favorite Page")]),
+          ),
+        ),
+      ),
+    );
   }
 }

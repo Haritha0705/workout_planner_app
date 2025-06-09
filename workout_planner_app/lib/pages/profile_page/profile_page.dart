@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workout_planner_app/const/responsive.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -10,6 +11,15 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(HDefaultPadding),
+            child: Column(children: [Text("Profile Page")]),
+          ),
+        ),
+      ),
+    );
   }
 }

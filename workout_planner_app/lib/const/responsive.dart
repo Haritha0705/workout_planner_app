@@ -1,0 +1,1 @@
+const double HDefaultPadding = 10.0;
