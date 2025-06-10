@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workout_planner_app/const/responsive.dart';
+import 'package:workout_planner_app/const_styles/responsive.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
