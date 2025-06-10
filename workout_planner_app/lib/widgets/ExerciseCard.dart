@@ -3,14 +3,21 @@ import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 
 class ExerciseCard extends StatelessWidget {
-  const ExerciseCard({super.key});
+
+  final String title;
+  final String imgUrl;
+
+  const ExerciseCard({
+    super.key, 
+  required this.title, 
+  required this.imgUrl});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 205,
       decoration: BoxDecoration(
-        color: HAccentGreenColor.withOpacity(0.15), // softer green tint
+        color: HCardButtonColor, // softer green tint
         borderRadius: BorderRadius.circular(15),
         boxShadow: const [
           BoxShadow(
@@ -18,35 +25,31 @@ class ExerciseCard extends StatelessWidget {
               0xFFE0E0E0,
             ), // subtle grey shadow instead of pure white
             offset: Offset(0, 4),
-            blurRadius: 8,
+            blurRadius: 1,
           ),
         ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(HDefaultPadding),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Exercise",
+              "${title}",
               style: TextStyle(
-                color: HMainColor,
-                fontSize: 20,
-                fontWeight: FontWeight.w800,
+                color: HSubtitleColor,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 10),
-            Center(
-              child: Image.asset(
-                "assets/exercises/dumbbell_curl.png",
-                width: 155,
-                fit: BoxFit.cover,
-              ),
+            Image.asset(
+              imgUrl,
+              width: 200,
+              fit: BoxFit.cover,
             ),
             const SizedBox(height: 10),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
+            Text(
                 "See more...",
                 style: TextStyle(
                   color: HMainPinkColor,
@@ -54,7 +57,7 @@ class ExerciseCard extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-            ),
+            
           ],
         ),
       ),

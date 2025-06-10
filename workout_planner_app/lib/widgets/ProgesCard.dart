@@ -5,7 +5,10 @@ import 'package:workout_planner_app/const_styles/responsive.dart';
 class ProgesCard extends StatefulWidget {
   final double val;
 
-  const ProgesCard({super.key, required this.val});
+  const ProgesCard({
+    super.key,
+    required this.val,
+  });
 
   @override
   State<ProgesCard> createState() => _ProgesCardState();
