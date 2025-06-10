@@ -3,15 +3,9 @@ import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 
 class ProgesCard extends StatefulWidget {
+  final double val;
 
-  final int total;
-  final double progessVal;
-
-  const ProgesCard({
-    super.key, 
-    required this.total, 
-    required this.progessVal
-  });
+  const ProgesCard({super.key, required this.val});
 
   @override
   State<ProgesCard> createState() => _ProgesCardState();
@@ -20,47 +14,57 @@ class ProgesCard extends StatefulWidget {
 class _ProgesCardState extends State<ProgesCard> {
   @override
   Widget build(BuildContext context) {
-
-    int done = (widget.progessVal * widget.total).toInt();
-
     return Container(
       width: double.infinity,
-      height: 230,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-      gradient: const LinearGradient(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [HGradientTopColor, HGradientBottomColor],
-        ) 
+        ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(HDefaultPadding*2),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsets.all(20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              "Proteins, Fats & Carbohydrates",
+              "Workout Progress !",
               style: TextStyle(
                 color: HMainWhiteColor,
-                fontSize: 28,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10), 
-            LinearProgressIndicator(
-              value: widget.progessVal,
-              backgroundColor: HGradientBottomColor,
-              valueColor: AlwaysStoppedAnimation(HMainPinkColor),
-              minHeight: 15,
-              borderRadius: BorderRadius.circular(100),
-            ),
-            const SizedBox(height: 10), 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const SizedBox(height: 10),
+            Stack(
+              alignment: Alignment.center,
               children: [
-                _buildTag("Done", done.toString()),
-                _buildTag("Totel", widget.total.toString()),
+                SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: CircularProgressIndicator(
+                    value: widget.val,
+                    backgroundColor: HCardButtonColor, // Soft orange tint
+                    valueColor: AlwaysStoppedAnimation(HMainPinkColor),
+                    strokeWidth: 12,
+                  ),
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '${(widget.val * 100).toInt()}%',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: HMainWhiteColor, // More contrast on gradient
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
@@ -69,25 +73,3 @@ class _ProgesCardState extends State<ProgesCard> {
     );
   }
 }
-
-Widget _buildTag (String title,String value){
-  return Column(
-    children: [
-      Text(title,
-      style: TextStyle(
-      fontSize: 16, 
-      fontWeight: FontWeight.w800,
-      color: HMainWhiteColor)),
-      const SizedBox(height: 5),
-      Text(
-        value,
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w800,
-          color: HMainWhiteColor,
-        ),
-      ),
-    ],
-  );
-}
-
