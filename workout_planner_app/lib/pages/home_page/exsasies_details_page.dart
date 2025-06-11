@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/models/exercise_model.dart';
-import 'package:workout_planner_app/widgets/ExerciseCard.dart';
+import 'package:workout_planner_app/widgets/exerciseCard.dart';
 
 class ExsasiesDetailsPage extends StatefulWidget {
 

@@ -6,7 +6,7 @@ import 'package:workout_planner_app/data/equipment_data.dart';
 import 'package:workout_planner_app/data/exercise_data.dart';
 import 'package:workout_planner_app/data/user_data.dart';
 import 'package:workout_planner_app/pages/home_page/exsasies_details_page.dart';
-import 'package:workout_planner_app/widgets/ExerciseCard.dart';
+import 'package:workout_planner_app/widgets/exerciseCard.dart';
 import 'package:workout_planner_app/widgets/ProgesCard.dart';
 
 class HomePage extends StatefulWidget {
@@ -206,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Icon(
-                                Icons.fitness_center,
+                                Icons.run_circle,
                                 size: 100,
                                 color: HGradientBottomColor,
                               ),
@@ -239,7 +239,7 @@ class _HomePageState extends State<HomePage> {
                         child: Padding(
                           padding: const EdgeInsets.all(HDefaultPadding * 5),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Icon(
                                 Icons.fitness_center,
@@ -247,14 +247,13 @@ class _HomePageState extends State<HomePage> {
                                 color: HGradientBottomColor,
                               ),
                               Text(
-                                "Exercises",
+                                "Equipments",
                                 style: TextStyle(
                                   color: HMainWhiteColor,
                                   fontSize: 34,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              
                             ],
                           ),
                         ),
