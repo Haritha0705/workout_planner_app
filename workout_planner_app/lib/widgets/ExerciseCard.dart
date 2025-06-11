@@ -6,11 +6,13 @@ class ExerciseCard extends StatelessWidget {
 
   final String title;
   final String imgUrl;
+  final String discription;
 
   const ExerciseCard({
     super.key, 
   required this.title, 
-  required this.imgUrl});
+  required this.imgUrl, 
+  required this.discription});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,15 @@ class ExerciseCard extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-            
+            const SizedBox(height: 5),
+            Text(
+              discription,
+              style: TextStyle(
+                fontSize: 18,
+                color: HGradientTopColor,
+                fontWeight: FontWeight.w900,
+              ),
+            )
           ],
         ),
       ),

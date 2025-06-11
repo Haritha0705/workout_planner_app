@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
+import 'package:workout_planner_app/data/equipment_data.dart';
+import 'package:workout_planner_app/data/exercise_data.dart';
 import 'package:workout_planner_app/data/user_data.dart';
+import 'package:workout_planner_app/pages/home_page/exsasies_details_page.dart';
 import 'package:workout_planner_app/widgets/ExerciseCard.dart';
 import 'package:workout_planner_app/widgets/ProgesCard.dart';
 
@@ -18,6 +21,8 @@ class _HomePageState extends State<HomePage> {
   final DateFormat dateFormater = DateFormat("dd");
 
   final userData = user;
+  final exsasiesList = ExerciseData().exerciseList;
+  final equipmentList = EquipmentData().equipmentList; 
 
   @override
   Widget build(BuildContext context) {
@@ -185,17 +190,38 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [ExerciseCard(
-                    title: "Exercise",
-                    imgUrl: "assets/exercises/hammer_curl.png"
+                  children: [
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ExsasiesDetailsPage(exsasiesTitle: "Exercise", exsasiesDes: "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.", exsasies: exsasiesList))
+                        );
+                      },
+                      child: ExerciseCard(
+                      title: "Exercise",
+                      imgUrl: "assets/exercises/hammer_curl.png",
+                      discription:"See more"
+                      ),
                     ), 
-                    ExerciseCard(
-                      title: "Equipments",
-                      imgUrl: "assets/exercises/flat_bench_press.png"
+                    GestureDetector(
+                      // onTap: () {
+                      //   Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => ExsasiesDetailsPage(
+                      //         exsasiesTitle: "Equipment",
+                      //         exsasiesDes:
+                      //             "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+                      //         exsasies: equipmentList,
+                      //       ),
+                      //     ),
+                      //   );
+                      // },
+                      child: ExerciseCard(
+                        title: "Equipments",
+                        imgUrl: "assets/exercises/flat_bench_press.png"
+                      ),
                     )],
                 ),
-                const SizedBox(height: 10),
-                
               ],
             ),
           ),
