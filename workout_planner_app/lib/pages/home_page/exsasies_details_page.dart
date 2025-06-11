@@ -36,6 +36,7 @@ class _ExsasiesDetailsPageState extends State<ExsasiesDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "$formatDate $dayFormat",

@@ -37,6 +37,7 @@ class ExerciseCard extends StatelessWidget {
         padding: const EdgeInsets.all(HDefaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               "${title}",
@@ -49,7 +50,7 @@ class ExerciseCard extends StatelessWidget {
             const SizedBox(height: 20),
             Image.asset(
               imgUrl,
-              width: 100,
+              width: 210,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 20),
@@ -61,6 +62,15 @@ class ExerciseCard extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
+            const SizedBox(height: 5),
+            Text(
+              "${exerciseDes}",
+              style: TextStyle(
+                color: HMainColor,
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+              ),
+            ),  
           ],
         ),
       ),

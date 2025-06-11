@@ -47,7 +47,6 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(height: 5),
                 Text(
                   "Hello ${userData.fullName}",
                   style: TextStyle(
@@ -56,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 5),
                 ProgesCard(val: 0.75),
                 const SizedBox(height: 10),
                 Row(
@@ -179,16 +178,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
                 const SizedBox(height: 10),
-                Text(
-                  "Today’s Activity",
-                  style: TextStyle(
-                    color: HMainColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
@@ -196,12 +186,36 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>ExsasiesDetailsPage(exsasiesTitle: "Exercise", exsasiesDes: "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.", exsasies: exsasiesList))
                         );
                       },
-                      child: ExerciseCard(
-                      title: "Exercise",
-                      imgUrl: "assets/exercises/hammer_curl.png",
-                      discription:"See more"
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: HAccentGreenColor.withOpacity(0.5),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(HDefaultPadding*2),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                "Exercises",
+                                style: TextStyle(
+                                  color: HMainWhiteColor,
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Icon(
+                                Icons.fitness_center,
+                                size: 100,
+                                color: HGradientBottomColor,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ), 
+                    ),
+                    const SizedBox(height: 10), 
                     GestureDetector(
                       // onTap: () {
                       //   Navigator.push(
@@ -216,10 +230,34 @@ class _HomePageState extends State<HomePage> {
                       //     ),
                       //   );
                       // },
-                      child: ExerciseCard(
-                        title: "Equipments",
-                        imgUrl: "assets/exercises/flat_bench_press.png",
-                        discription: "See more",
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: HAccentGreenColor.withOpacity(0.5),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(HDefaultPadding * 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Icon(
+                                Icons.fitness_center,
+                                size: 100,
+                                color: HGradientBottomColor,
+                              ),
+                              Text(
+                                "Exercises",
+                                style: TextStyle(
+                                  color: HMainWhiteColor,
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              
+                            ],
+                          ),
+                        ),
                       ),
                     )],
                 ),
