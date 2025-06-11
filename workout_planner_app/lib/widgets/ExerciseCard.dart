@@ -44,13 +44,13 @@ class ExerciseCard extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             Image.asset(
               imgUrl,
-              width: 200,
+              width: 300,
               fit: BoxFit.cover,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             Text(
                 "${discription}",
                 style: TextStyle(
