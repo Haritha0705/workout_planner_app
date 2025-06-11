@@ -2,6 +2,7 @@ class Exercise {
   final int id;
   final String exerciseName;
   final String exerciseImgURL;
+  final String exerciseDes;
   final int numOfMin;
   bool completed;
 
@@ -11,5 +12,6 @@ class Exercise {
     required this.exerciseImgURL,
     required this.numOfMin,
     required this.completed,
+    required this.exerciseDes,
   });
 }

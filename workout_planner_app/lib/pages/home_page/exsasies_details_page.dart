@@ -85,6 +85,7 @@ class _ExsasiesDetailsPageState extends State<ExsasiesDetailsPage> {
                     title: exercise.exerciseName,
                     imgUrl: exercise.exerciseImgURL,
                     discription: "${exercise.numOfMin}  mins of workout",
+                    exerciseDes: exercise.exerciseDes,
                   );
                 },
               )

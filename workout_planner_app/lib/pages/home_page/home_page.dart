@@ -219,7 +219,7 @@ class _HomePageState extends State<HomePage> {
                       child: ExerciseCard(
                         title: "Equipments",
                         imgUrl: "assets/exercises/flat_bench_press.png",
-                        discription: "See more"
+                        discription: "See more",
                       ),
                     )],
                 ),

@@ -7,12 +7,14 @@ class ExerciseCard extends StatelessWidget {
   final String title;
   final String imgUrl;
   final String discription;
+  final String? exerciseDes;
 
   const ExerciseCard({
     super.key, 
   required this.title, 
   required this.imgUrl, 
-  required this.discription});
+  required this.discription, 
+   this.exerciseDes});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class ExerciseCard extends StatelessWidget {
             const SizedBox(height: 20),
             Image.asset(
               imgUrl,
-              width: 300,
+              width: 100,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 20),

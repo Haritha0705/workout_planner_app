@@ -17,12 +17,16 @@ User user = User(
       exerciseName: "Push-ups", 
       exerciseImgURL: "assets/exercises/cobra.png", 
       numOfMin: 10, 
+      exerciseDes:
+          "Leg raises are a great core-strengthening exercise that targets the lower abs. Lie flat on your back and lift your legs straight up, keeping them together and controlled.",
       completed: false), 
   Exercise(
       id: 0, 
       exerciseName: "Squats", 
       exerciseImgURL: "assets/exercises/downward-facing.png", 
-      numOfMin: 30, 
+      numOfMin: 30,
+      exerciseDes:
+          "Leg raises are a great core-strengthening exercise that targets the lower abs. Lie flat on your back and lift your legs straight up, keeping them together and controlled.", 
       completed: false)
   ],
   equipmentList: [
@@ -50,6 +54,8 @@ User user = User(
       exerciseName: "Plank", 
       exerciseImgURL: "assets/exercises/dragging.png", 
       numOfMin: 30, 
+      exerciseDes:
+          "Renegade rows work the back, shoulders, and core. Start in a plank position holding dumbbells and alternate rowing each dumbbell towards your waist.",
       completed: false)
 ],
   favEquipmentList: [
