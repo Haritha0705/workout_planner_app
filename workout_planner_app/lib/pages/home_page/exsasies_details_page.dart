@@ -73,16 +73,21 @@ class _ExsasiesDetailsPageState extends State<ExsasiesDetailsPage> {
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
                   crossAxisSpacing: HDefaultPadding,
                   mainAxisSpacing: HDefaultPadding,
-                ), 
-                itemBuilder: (context,index){
+                ),
+                itemCount: widget.exsasies.length,
+                itemBuilder: (context, index) {
                   Exercise exercise = widget.exsasies[index];
-                  ExerciseCard(
-                    title: exercise.exerciseName, 
-                    imgUrl: exercise.exerciseImgURL);
-                })
+                  return ExerciseCard(
+                    title: exercise.exerciseName,
+                    imgUrl: exercise.exerciseImgURL,
+                    discription: "${exercise.numOfMin}  mins of workout",
+                  );
+                },
+              )
             ],
           ),
         ),

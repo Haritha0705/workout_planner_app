@@ -52,22 +52,13 @@ class ExerciseCard extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-                "See more...",
+                "${discription}",
                 style: TextStyle(
                   color: HMainPinkColor,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 ),
               ),
-            const SizedBox(height: 5),
-            Text(
-              discription,
-              style: TextStyle(
-                fontSize: 18,
-                color: HGradientTopColor,
-                fontWeight: FontWeight.w900,
-              ),
-            )
           ],
         ),
       ),
