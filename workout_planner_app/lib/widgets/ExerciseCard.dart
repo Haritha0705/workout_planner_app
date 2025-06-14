@@ -19,15 +19,15 @@ class ExerciseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 205,
+      width: double.infinity,
       decoration: BoxDecoration(
-        color: HCardButtonColor, // softer green tint
+        color: HCardButtonColor, 
         borderRadius: BorderRadius.circular(15),
         boxShadow: const [
           BoxShadow(
             color: Color(
               0xFFE0E0E0,
-            ), // subtle grey shadow instead of pure white
+            ), 
             offset: Offset(0, 4),
             blurRadius: 1,
           ),
@@ -50,26 +50,8 @@ class ExerciseCard extends StatelessWidget {
             const SizedBox(height: 20),
             Image.asset(
               imgUrl,
-              width: 110,
+              width: 90,
               fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 20),
-            Text(
-                "${discription}",
-                style: TextStyle(
-                  color: HMainPinkColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            const SizedBox(height: 5),
-            Text(
-              "${exerciseDes}",
-              style: TextStyle(
-                color: HMainColor,
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
-              ),
             ),  
           ],
         ),

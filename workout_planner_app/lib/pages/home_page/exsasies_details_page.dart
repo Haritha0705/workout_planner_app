@@ -75,7 +75,7 @@ class _ExsasiesDetailsPageState extends State<ExsasiesDetailsPage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
+                  crossAxisCount: 2,
                   crossAxisSpacing: HDefaultPadding,
                   mainAxisSpacing: HDefaultPadding,
                 ),
