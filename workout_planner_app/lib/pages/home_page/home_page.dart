@@ -5,7 +5,7 @@ import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/equipment_data.dart';
 import 'package:workout_planner_app/data/exercise_data.dart';
 import 'package:workout_planner_app/data/user_data.dart';
-import 'package:workout_planner_app/pages/home_page/exsasies_details_page.dart';
+import 'package:workout_planner_app/pages/home_page/exsasies_section_page.dart';
 import 'package:workout_planner_app/widgets/exerciseCard.dart';
 import 'package:workout_planner_app/widgets/ProgesCard.dart';
 
