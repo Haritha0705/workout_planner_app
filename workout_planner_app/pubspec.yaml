@@ -63,7 +63,7 @@ flutter:
   assets:
     - assets/equipments/
     - assets/exercises/
-    - assets/workout-run.svg
+    - assets/myicon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

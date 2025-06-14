@@ -39,21 +39,31 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "$formatDate $dayFormat",
-                  style: TextStyle(
-                    color: HSubtitleColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                Text(
-                  "Hello ${userData.fullName}",
-                  style: TextStyle(
-                    color: HMainColor,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "$formatDate $dayFormat",
+                          style: TextStyle(
+                            color: HSubtitleColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          "Hello ${userData.fullName}",
+                          style: TextStyle(
+                            color: HMainColor,
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                      Image(image: AssetImage('assets/myicon.png'),width: 55, fit: BoxFit.cover)
+                  ],
                 ),
                 const SizedBox(height: 5),
                 ProgesCard(val: 0.75),
