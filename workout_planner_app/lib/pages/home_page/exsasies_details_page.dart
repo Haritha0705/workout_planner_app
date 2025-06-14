@@ -40,26 +40,22 @@ class _ExsasiesEachDetailsPageState extends State<ExsasiesEachDetailsPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(HDefaultPadding),
+          padding: const EdgeInsets.all(HDefaultPadding*3),
           child: Column(
             children: [
-              Image.asset(widget.imgUrl, width: 127, fit: BoxFit.cover), 
+              Image.asset(
+                widget.imgUrl, 
+                width: 400, 
+                fit: BoxFit.cover), 
+                SizedBox(height: 20),
               Text(
                 "${widget.discription}",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w800,
                   color: HMainColor,
                 ),
               ),
-  
-              
-
-
-
-
-
-
             ],
           ),
         ),
