@@ -5,6 +5,7 @@ import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/equipment_data.dart';
 import 'package:workout_planner_app/data/exercise_data.dart';
 import 'package:workout_planner_app/data/user_data.dart';
+import 'package:workout_planner_app/pages/home_page/equipment_details_page.dart';
 import 'package:workout_planner_app/pages/home_page/exsasies_section_page.dart';
 import 'package:workout_planner_app/widgets/exerciseCard.dart';
 import 'package:workout_planner_app/widgets/ProgesCard.dart';
@@ -227,19 +228,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(height: 10), 
                     GestureDetector(
-                      // onTap: () {
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => ExsasiesDetailsPage(
-                      //         exsasiesTitle: "Equipment",
-                      //         exsasiesDes:
-                      //             "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
-                      //         exsasies: equipmentList,
-                      //       ),
-                      //     ),
-                      //   );
-                      // },
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EquipmentDetailsPage(equipmentTitle: "Equipment", equipmentDes: "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.", equipmentList: equipmentList)
+                          ),
+                        );
+                      },
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
