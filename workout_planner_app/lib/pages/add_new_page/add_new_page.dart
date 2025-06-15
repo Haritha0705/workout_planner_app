@@ -32,7 +32,7 @@ class _AddNewPageState extends State<AddNewPage> {
                 Text(
                   "All Exercises",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: HMainColor,
                   ),
@@ -73,6 +73,16 @@ class _AddNewPageState extends State<AddNewPage> {
                     },
                   ),
                 ),
+                SizedBox(height: 20),
+                Text(
+                  "All Equipment",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: HMainColor,
+                  ),
+                ),
+                SizedBox(height: 20),
               ],
             ),
           ),

@@ -21,7 +21,7 @@ class _AddexErciseCardState extends State<AddexErciseCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 200,
       margin: EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
@@ -33,17 +33,18 @@ class _AddexErciseCardState extends State<AddexErciseCard> {
       child: Padding(
         padding: const EdgeInsets.all(HDefaultPadding),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               "${widget.exsasiesTitle}",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: HMainColor,
+                color: HSubtitleColor,
               ),
             ),
             SizedBox(height: 5),
-            Image.asset(widget.exsasiesImgURL, width: 100, fit: BoxFit.cover),
+            Image.asset(widget.exsasiesImgURL, width: 83, fit: BoxFit.cover),
             SizedBox(height: 5),
             Text(
               "${widget.exsasiesMin.toString()} Min",
@@ -60,8 +61,8 @@ class _AddexErciseCardState extends State<AddexErciseCard> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: HSubtitleColor.withOpacity(0.2),
@@ -80,8 +81,8 @@ class _AddexErciseCardState extends State<AddexErciseCard> {
                     ),
                   ),
                   Container(
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: HSubtitleColor.withOpacity(0.2),
