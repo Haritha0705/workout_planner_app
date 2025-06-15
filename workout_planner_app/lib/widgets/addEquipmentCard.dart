@@ -133,7 +133,7 @@ class _AddEquipmentCardState extends State<AddEquipmentCard> {
                         icon: Icon(
                           widget.isFav ? Icons.favorite : Icons.favorite_border,
                           size: 30,
-                          color: HMainColor,
+                          color: HGradientBottomColor,
                         ),
                       ),
                     ),

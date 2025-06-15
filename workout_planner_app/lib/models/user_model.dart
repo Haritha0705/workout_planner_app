@@ -48,4 +48,20 @@ class User {
   void removeFav(Exercise exercise) {
     favExerciseList.remove(exercise);
   }
+
+    void addEquipment(Equipment equipment) {
+    equipmentList.add(equipment);
+  }
+
+  void removeEquipment(Equipment equipment) {
+    equipmentList.remove(equipment);
+  }
+
+  void addFavEq(Equipment equipment) {
+    favEquipmentList.add(equipment);
+  }
+
+  void removeFavEq(Equipment equipment) {
+    favEquipmentList.remove(equipment);
+  }
 }

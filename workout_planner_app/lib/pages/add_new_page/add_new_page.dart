@@ -4,7 +4,9 @@ import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/equipment_data.dart';
 import 'package:workout_planner_app/data/exercise_data.dart';
 import 'package:workout_planner_app/data/user_data.dart';
+import 'package:workout_planner_app/models/equipment_model.dart';
 import 'package:workout_planner_app/models/exercise_model.dart';
+import 'package:workout_planner_app/widgets/addEquipmentCard.dart';
 import 'package:workout_planner_app/widgets/addExerciseCard.dart';
 
 class AddNewPage extends StatefulWidget {
@@ -83,6 +85,42 @@ class _AddNewPageState extends State<AddNewPage> {
                   ),
                 ),
                 SizedBox(height: 20),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemCount: equipmentList.length,
+                    itemBuilder: 
+                  (context,index){
+                    Equipment equipment = equipmentList[index];
+                    return AddEquipmentCard(
+                      equipmentName: equipment.equipmentName, 
+                      equipmentDes: equipment.equipmentDes, 
+                      equipmentImgURL: equipment.equipmentImgURL, 
+                      noOfMin: equipment.noOfMin, 
+                      noOfCalaris: equipment.noOfCalaris, 
+                      isAdded: userData.equipmentList.contains(equipment), 
+                      isFav: userData.favEquipmentList.contains(equipment), 
+                      toggleAddExercise: (){
+                        setState(() {
+                            if (userData.equipmentList.contains(equipment)) {
+                              userData.removeEquipment(equipment);
+                            } else {
+                              userData.addEquipment(equipment);
+                            }
+                          });
+                      }, 
+                      toggleFav: (){
+                        setState(() {
+                            if (userData.favEquipmentList.contains(equipment)) {
+                              userData.removeFavEq(equipment);
+                            } else {
+                              userData.addFavEq(equipment);
+                            }
+                          });
+                      });
+                  }
+                ))
               ],
             ),
           ),
