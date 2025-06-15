@@ -15,9 +15,8 @@ class AddNewPage extends StatefulWidget {
 }
 
 class _AddNewPageState extends State<AddNewPage> {
-
   final userData = user;
-  final exsasieList = ExerciseData().exerciseList;
+  final exerciseList = ExerciseData().exerciseList;
   final equipmentList = EquipmentData().equipmentList;
 
   @override
@@ -30,21 +29,22 @@ class _AddNewPageState extends State<AddNewPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("All Exercises",
+                Text(
+                  "All Exercises",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: HMainColor,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.28,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: exsasieList.length,
+                    itemCount: exerciseList.length,
                     itemBuilder: (context, index) {
-                      Exercise exercise = exsasieList[index];
+                      Exercise exercise = exerciseList[index];
                       return AddexErciseCard(
                         exsasiesTitle: exercise.exerciseName,
                         exsasiesImgURL: exercise.exerciseImgURL,
@@ -73,8 +73,8 @@ class _AddNewPageState extends State<AddNewPage> {
                     },
                   ),
                 ),
-                
-                ]),
+              ],
+            ),
           ),
         ),
       ),
