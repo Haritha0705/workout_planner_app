@@ -28,6 +28,7 @@ class _AddNewPageState extends State<AddNewPage> {
           child: Padding(
             padding: const EdgeInsets.all(HDefaultPadding),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("All Exercises",
                   style: TextStyle(
@@ -38,38 +39,41 @@ class _AddNewPageState extends State<AddNewPage> {
                 ),
                 SizedBox(height: 10),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.28,
+                  height: MediaQuery.of(context).size.height * 0.28,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: exsasieList.length,
-                    itemBuilder: (context,index){
+                    itemBuilder: (context, index) {
                       Exercise exercise = exsasieList[index];
                       return AddexErciseCard(
-                        exsasiesTitle: exercise.exerciseName, 
-                        exsasiesImgURL: exercise.exerciseImgURL, 
-                        exsasiesMin: exercise.numOfMin.toString(), 
-                        isAdded: userData.exerciseList.contains(exercise), 
-                        isFav: userData.favExerciseList.contains(exercise), 
-                        toggleAddExercise: (){
+                        exsasiesTitle: exercise.exerciseName,
+                        exsasiesImgURL: exercise.exerciseImgURL,
+                        exsasiesMin: exercise.numOfMin.toString(),
+                        isAdded: userData.exerciseList.contains(exercise),
+                        toggleAddExercise: () {
                           setState(() {
                             if (userData.exerciseList.contains(exercise)) {
                               userData.removeExsasie(exercise);
-                            }else{
+                            } else {
                               userData.addExsasie(exercise);
                             }
                           });
-                        }, 
-                        toggleFav: (){
+                        },
+                        isFav: userData.favExerciseList.contains(exercise),
+                        toggleFav: () {
                           setState(() {
                             if (userData.favExerciseList.contains(exercise)) {
                               userData.removeFav(exercise);
-                            }else{
+                            } else {
                               userData.addFav(exercise);
                             }
                           });
-                        });
-                    }),
-                )
+                        },
+                      );
+                    },
+                  ),
+                ),
+                
                 ]),
           ),
         ),
