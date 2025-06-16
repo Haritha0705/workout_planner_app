@@ -24,105 +24,102 @@ class _AddNewPageState extends State<AddNewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: HMainWhiteColor,
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(HDefaultPadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "All Exercises",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: HMainColor,
-                  ),
+          padding: const EdgeInsets.all(HDefaultPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Exercise Section
+              Text(
+                "All Exercises",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: HMainColor,
                 ),
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.28,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: exerciseList.length,
-                    itemBuilder: (context, index) {
-                      Exercise exercise = exerciseList[index];
-                      return AddexErciseCard(
-                        exsasiesTitle: exercise.exerciseName,
-                        exsasiesImgURL: exercise.exerciseImgURL,
-                        exsasiesMin: exercise.numOfMin.toString(),
-                        isAdded: userData.exerciseList.contains(exercise),
-                        toggleAddExercise: () {
-                          setState(() {
-                            if (userData.exerciseList.contains(exercise)) {
-                              userData.removeExsasie(exercise);
-                            } else {
-                              userData.addExsasie(exercise);
-                            }
-                          });
-                        },
-                        isFav: userData.favExerciseList.contains(exercise),
-                        toggleFav: () {
-                          setState(() {
-                            if (userData.favExerciseList.contains(exercise)) {
-                              userData.removeFav(exercise);
-                            } else {
-                              userData.addFav(exercise);
-                            }
-                          });
-                        },
-                      );
-                    },
-                  ),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  "All Equipment",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: HMainColor,
-                  ),
-                ),
-                SizedBox(height: 20),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: equipmentList.length,
-                    itemBuilder: 
-                  (context,index){
-                    Equipment equipment = equipmentList[index];
-                    return AddEquipmentCard(
-                      equipmentName: equipment.equipmentName, 
-                      equipmentDes: equipment.equipmentDes, 
-                      equipmentImgURL: equipment.equipmentImgURL, 
-                      noOfMin: equipment.noOfMin, 
-                      noOfCalaris: equipment.noOfCalaris, 
-                      isAdded: userData.equipmentList.contains(equipment), 
-                      isFav: userData.favEquipmentList.contains(equipment), 
-                      toggleAddExercise: (){
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.28,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: exerciseList.length,
+                  itemBuilder: (context, index) {
+                    Exercise exercise = exerciseList[index];
+                    return AddexErciseCard(
+                      exsasiesTitle: exercise.exerciseName,
+                      exsasiesImgURL: exercise.exerciseImgURL,
+                      exsasiesMin: exercise.numOfMin.toString(),
+                      isAdded: userData.exerciseList.contains(exercise),
+                      toggleAddExercise: () {
                         setState(() {
-                            if (userData.equipmentList.contains(equipment)) {
-                              userData.removeEquipment(equipment);
-                            } else {
-                              userData.addEquipment(equipment);
-                            }
-                          });
-                      }, 
-                      toggleFav: (){
+                          userData.exerciseList.contains(exercise)
+                              ? userData.removeExsasie(exercise)
+                              : userData.addExsasie(exercise);
+                        });
+                      },
+                      isFav: userData.favExerciseList.contains(exercise),
+                      toggleFav: () {
                         setState(() {
-                            if (userData.favEquipmentList.contains(equipment)) {
-                              userData.removeFavEq(equipment);
-                            } else {
-                              userData.addFavEq(equipment);
-                            }
-                          });
-                      });
-                  }
-                ))
-              ],
-            ),
+                          userData.favExerciseList.contains(exercise)
+                              ? userData.removeFav(exercise)
+                              : userData.addFav(exercise);
+                        });
+                      },
+                    );
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // Equipment Section
+              Text(
+                "All Equipment",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: HMainColor,
+                ),
+              ),
+              const SizedBox(height: 12),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: equipmentList.length,
+                itemBuilder: (context, index) {
+                  Equipment equipment = equipmentList[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: AddEquipmentCard(
+                      equipmentName: equipment.equipmentName,
+                      equipmentDes: equipment.equipmentDes,
+                      equipmentImgURL: equipment.equipmentImgURL,
+                      noOfMin: equipment.noOfMin,
+                      noOfCalaris: equipment.noOfCalaris,
+                      isAdded: userData.equipmentList.contains(equipment),
+                      isFav: userData.favEquipmentList.contains(equipment),
+                      toggleAddExercise: () {
+                        setState(() {
+                          userData.equipmentList.contains(equipment)
+                              ? userData.removeEquipment(equipment)
+                              : userData.addEquipment(equipment);
+                        });
+                      },
+                      toggleFav: () {
+                        setState(() {
+                          userData.favEquipmentList.contains(equipment)
+                              ? userData.removeFavEq(equipment)
+                              : userData.addFavEq(equipment);
+                        });
+                      },
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
