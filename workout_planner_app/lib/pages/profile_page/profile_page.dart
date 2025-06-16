@@ -54,14 +54,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   child: Column(
                     children: [
-                      // Text(
-                      //   "Totel Miuites Spend: ${userData.calTottalMin()}",
-                      //   style: TextStyle(
-                      //     fontSize: 20,
-                      //     fontWeight: FontWeight.bold,
-                      //     color: HGradientBottomColor,
-                      //   ),
-                      // ),
+                      Text(
+                        "Totel Miuites Spend: ${userData.calTottalMin()}",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: HGradientBottomColor,
+                        ),
+                      ),
                       const SizedBox(height: 20),
                       // Text(
                       //   "Totel Exercise Completed: ${userData.totelExerciesCompleted.toString()}",
