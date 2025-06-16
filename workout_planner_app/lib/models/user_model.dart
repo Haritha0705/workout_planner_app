@@ -64,4 +64,15 @@ class User {
   void removeFavEq(Equipment equipment) {
     favEquipmentList.remove(equipment);
   }
+
+  int calTottalMin(){
+    int totalMinSpend = 0;
+    for (var i in exerciseList) {
+      totalMinSpend+=i.numOfMin;
+    }
+    for (var i in equipmentList) {
+      totalMinSpend += i.noOfMin;
+    }
+    return totalMinSpend;
+  }
 }
