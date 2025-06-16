@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/user_data.dart';
+import 'package:workout_planner_app/models/equipment_model.dart';
 import 'package:workout_planner_app/models/exercise_model.dart';
 
 class FavoritePage extends StatefulWidget {
@@ -88,6 +89,65 @@ class _FavoritePageState extends State<FavoritePage> {
                   ),
                 ),
                 SizedBox(height: 20),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: HDefaultPadding,
+                    mainAxisSpacing: HDefaultPadding,
+                    childAspectRatio: 16 / 22,
+                  ),
+                  itemCount: userData.favExerciseList.length,
+                  itemBuilder: (context, index) {
+                    Equipment favEquipment = userData.favEquipmentList[index];
+                    return Padding(
+                      padding: const EdgeInsets.all(HDefaultPadding),
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(HDefaultPadding),
+                          child: Column(
+                            children: [
+                              Text(
+                                favEquipment.equipmentName,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w700,
+                                  color: HMainColor,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Image.asset(
+                                favEquipment.equipmentImgURL,
+                                width: 100,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "${favEquipment.noOfMin} Min Workout",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.normal,
+                                  color: HMainPinkColor,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "${favEquipment.equipmentDes}",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.normal,
+                                  color: HSubtitleColor,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ) 
               ]),
           ),
         ),
