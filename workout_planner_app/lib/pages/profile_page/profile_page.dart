@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/user_data.dart';
+import 'package:workout_planner_app/models/exercise_model.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -83,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   child: Column(
                     children: [
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 30),
                       Stack(
                         alignment: Alignment.center,
                               children: [SizedBox(
@@ -131,7 +132,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),  
                       const SizedBox(height: 10),    
                       Text(
-                        "Total Exercise Completed: ${userData.calTottalMin()}",
+                        "Total Exercise Completed: ${userData.totalExerciseCompleted}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -140,7 +141,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       const SizedBox(height: 10), 
                       Text(
-                        "Total Equipment Handover: ${userData.calTottalMin()}",
+                        "Total Equipment Handover: ${userData.totalEquipmentsHandOver}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -150,7 +151,39 @@ class _ProfilePageState extends State<ProfilePage> {
                       const SizedBox(height: 20),        
                     ],
                   ),
-                )
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "Your Exercise",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: HMainColor,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+                const SizedBox(height: 10),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: userData.exerciseList.length,
+                  itemBuilder: (context,index){
+                    Exercise userExercise = userData.exerciseList[index];
+                    return ProfilePage(
+                      
+                    );
+                  }),
+                const SizedBox(height: 10),
+                Text(
+                  "Your Equipment",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: HMainColor,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+                const SizedBox(height: 10),
               ]),
           ),
         ),
