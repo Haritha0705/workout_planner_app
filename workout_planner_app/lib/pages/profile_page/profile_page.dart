@@ -54,6 +54,44 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   child: Column(
                     children: [
+                      const SizedBox(height: 40),
+                      Stack(
+                        alignment: Alignment.center,
+                              children: [SizedBox(
+                                  height: 100,
+                                  width: 100,
+                                  child:CircularProgressIndicator(
+                                    value: 0.6, 
+                                    backgroundColor: HCardButtonColor,
+                                    valueColor: AlwaysStoppedAnimation(
+                                      HMainPinkColor,
+                                    ),
+                                    strokeWidth: 16,
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      '720', // current value
+                                      style: TextStyle(
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,
+                                        color: HMainWhiteColor,
+                                      ),
+                                    ),
+                                    Text(
+                                      '/kCal', // total
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: HMainColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                      const SizedBox(height: 20),      
                       Text(
                         "Totel Miuites Spend: ${userData.calTottalMin()}",
                         style: TextStyle(
@@ -62,24 +100,16 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: HGradientBottomColor,
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      // Text(
-                      //   "Totel Exercise Completed: ${userData.totelExerciesCompleted.toString()}",
-                      //   style: TextStyle(
-                      //     fontSize: 14,
-                      //     fontWeight: FontWeight.bold,
-                      //     color: HMainColor,
-                      //   ),
-                      // ),
-                      const SizedBox(height: 10),
-                      // Text(
-                      //   "Totel Equipment handOvered: ${userData.totelEqupmentHandOver.toString()}",
-                      //   style: TextStyle(
-                      //     fontSize: 14,
-                      //     fontWeight: FontWeight.bold,
-                      //     color: HMainColor,
-                      //   ),
-                      // ),
+                      const SizedBox(height: 10), 
+                      Text(
+                        "Totel Miuites Spend: ${userData.calTottalMin()}",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: HGradientBottomColor,
+                        ),
+                      ),
+                      const SizedBox(height: 20),        
                     ],
                   ),
                 )
