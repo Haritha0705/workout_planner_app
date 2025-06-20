@@ -76,4 +76,20 @@ class User {
     return totalMinSpend;
   }
 
+  void markExAsCompleted(int exerciseID){
+    final exsasies = exerciseList.firstWhere((ex)=>ex.id == exerciseID);
+
+    exsasies.completed = true;
+    removeExsasie(exsasies);
+    totalExerciseCompleted++;
+  }
+
+  void markExAsHandover(int equipmentID) {
+    final equipment = equipmentList.firstWhere((eq) => eq.id == equipmentID);
+
+    equipment.handOvered = true;
+    removeEquipment(equipment);
+
+    totalEquipmentsHandOver++;
+  }
 }

@@ -4,6 +4,7 @@ import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/user_data.dart';
 import 'package:workout_planner_app/models/exercise_model.dart';
+import 'package:workout_planner_app/widgets/profileCard.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -169,8 +170,14 @@ class _ProfilePageState extends State<ProfilePage> {
                   itemCount: userData.exerciseList.length,
                   itemBuilder: (context,index){
                     Exercise userExercise = userData.exerciseList[index];
-                    return ProfilePage(
-                      
+                    return ProfileCard(
+                      taskName: userExercise.exerciseName,
+                      taskImg: userExercise.exerciseImgURL,
+                      markAsDone: () {
+                        setState(() {
+                          userData.markExAsCompleted(userExercise.id);
+                        });
+                      },
                     );
                   }),
                 const SizedBox(height: 10),
