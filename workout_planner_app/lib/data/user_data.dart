@@ -14,19 +14,19 @@ User user = User(
   exerciseList: [
   Exercise(
       id: 0, 
-      exerciseName: "Push-ups", 
-      exerciseImgURL: "assets/exercises/cobra.png", 
+      exerciseName: "Leg Raises", 
+      exerciseImgURL: "assets/exercises/leg_raises.png", 
       numOfMin: 10, 
       exerciseDes:
-          "Leg raises are a great core-strengthening exercise that targets the lower abs. Lie flat on your back and lift your legs straight up, keeping them together and controlled.",
+          "Leg raises are a powerful core-strengthening exercise that focuses on the lower abdominal muscles. Begin by lying flat on your back with your legs extended and arms at your sides. Slowly lift your legs together without bending your knees until they are at a 90-degree angle from the floor. Engage your core throughout the movement. Then, gently lower your legs back down without letting them touch the ground. This movement improves core stability and helps build a stronger midsection. It's ideal for both beginners and advanced athletes looking to tone and tighten their lower abs.",
       completed: false), 
   Exercise(
-      id: 0, 
-      exerciseName: "Squats", 
-      exerciseImgURL: "assets/exercises/downward-facing.png", 
+      id: 1, 
+      exerciseName: "Dumbbell Squat", 
+      exerciseImgURL: "assets/exercises/dumbbell_squat.png", 
       numOfMin: 30,
       exerciseDes:
-          "Leg raises are a great core-strengthening exercise that targets the lower abs. Lie flat on your back and lift your legs straight up, keeping them together and controlled.", 
+          "The dumbbell squat is a compound lower-body exercise that targets the quadriceps, hamstrings, glutes, and core. To perform it, stand upright with a dumbbell in each hand and your feet shoulder-width apart. Slowly bend your knees and lower your body into a squat position, keeping your chest lifted and your back straight. Your thighs should be parallel to the floor. Push through your heels to return to a standing position. This movement not only builds strength in the lower body but also improves posture, balance, and coordination, making it essential for full-body fitness routines.", 
       completed: false)
   ],
   equipmentList: [
@@ -51,11 +51,11 @@ User user = User(
   favExerciseList: [
   Exercise(
       id: 2, 
-      exerciseName: "Plank", 
-      exerciseImgURL: "assets/exercises/dragging.png", 
+      exerciseName: "Renegade Row", 
+      exerciseImgURL: "assets/exercises/renegade_row.png", 
       numOfMin: 30, 
       exerciseDes:
-          "Renegade rows work the back, shoulders, and core. Start in a plank position holding dumbbells and alternate rowing each dumbbell towards your waist.",
+          "Renegade rows are a challenging full-body movement that combines a plank with a dumbbell row, targeting the back, shoulders, and core. Begin in a high plank position, gripping a dumbbell in each hand with your feet shoulder-width apart. Engage your core and lift one dumbbell towards your waist while balancing on the opposite arm. Lower the dumbbell and repeat on the other side. Keep your hips stable and avoid rotating your torso. This exercise enhances upper-body strength, improves core stability, and trains your body to stay balanced and controlled during dynamic movements.",
       completed: false)
 ],
   favEquipmentList: [
