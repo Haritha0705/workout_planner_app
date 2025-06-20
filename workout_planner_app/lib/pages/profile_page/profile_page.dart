@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/user_data.dart';
@@ -12,10 +13,18 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
 
+  final DateFormat formmter = DateFormat("EEEE,MMMM");
+  final DateFormat dateFormater = DateFormat("dd");
+
   final userData = user;
 
   @override
   Widget build(BuildContext context) {
+
+    DateTime now = DateTime.now();
+    String formatDate = formmter.format(now);
+    String dayFormat = dateFormater.format(now);
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -28,7 +37,16 @@ class _ProfilePageState extends State<ProfilePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(
+                          "$formatDate $dayFormat",
+                          style: TextStyle(
+                            color: HSubtitleColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                         Text(
                           "Hello ${userData.fullName}",
                           style: TextStyle(
