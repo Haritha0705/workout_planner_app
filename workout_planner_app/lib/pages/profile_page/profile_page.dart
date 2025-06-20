@@ -22,6 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Padding(
             padding: const EdgeInsets.all(HDefaultPadding),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,7 +46,17 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 10),
+                Text(
+                  "Your Progress",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: HGradientBottomColor,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+                const SizedBox(height: 10),
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -77,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       style: TextStyle(
                                         fontSize: 28,
                                         fontWeight: FontWeight.bold,
-                                        color: HMainWhiteColor,
+                                        color: HMainColor,
                                       ),
                                     ),
                                     Text(
@@ -91,9 +102,18 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                               ],
                             ),
-                      const SizedBox(height: 20),      
+                      const SizedBox(height: 30), 
                       Text(
-                        "Totel Miuites Spend: ${userData.calTottalMin()}",
+                        "Total Minutes Spend: ${userData.calTottalMin()}",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: HGradientBottomColor,
+                        ),
+                      ),  
+                      const SizedBox(height: 10),    
+                      Text(
+                        "Total Exercise Completed: ${userData.calTottalMin()}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -102,7 +122,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       const SizedBox(height: 10), 
                       Text(
-                        "Totel Miuites Spend: ${userData.calTottalMin()}",
+                        "Total Equipment Handover: ${userData.calTottalMin()}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
