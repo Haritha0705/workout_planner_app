@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:workout_planner_app/const_styles/colors.dart';
 import 'package:workout_planner_app/const_styles/responsive.dart';
 import 'package:workout_planner_app/data/user_data.dart';
+import 'package:workout_planner_app/models/equipment_model.dart';
 import 'package:workout_planner_app/models/exercise_model.dart';
 import 'package:workout_planner_app/widgets/profileCard.dart';
 
@@ -189,6 +190,23 @@ class _ProfilePageState extends State<ProfilePage> {
                     color: HMainColor,
                   ),
                   textAlign: TextAlign.start,
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: userData.equipmentList.length,
+                  itemBuilder: (context, index) {
+                    Equipment useErequipment = userData.equipmentList[index];
+                    return ProfileCard(
+                      taskName: useErequipment.equipmentName,
+                      taskImg: useErequipment.equipmentImgURL,
+                      markAsDone: () {
+                        setState(() {
+                          userData.markExAsHandover(useErequipment.id);
+                        });
+                      },
+                    );
+                  },
                 ),
                 const SizedBox(height: 10),
               ]),
